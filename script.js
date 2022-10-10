@@ -7,7 +7,12 @@ function runner(path) {
   if (path.includes(".")) {
     // File
     var elem = document.createElement("li");
-    elem.innerText = path.split("/").pop();
+    var link = document.createElement("a");
+    elem.classList = ["file"];
+    link.setAttribute("href", path);
+    link.setAttribute("target", "_blank");
+    link.innerText = path.split("/").pop();
+    elem.appendChild(link);
     return elem;
   } else {
     // Folder
@@ -29,7 +34,7 @@ function runner(path) {
   }
 }
 
-document.getElementById("my_treeview").appendChild(runner("Course_material"));
+document.getElementById("my_treeview").appendChild(runner("Course Materials"));
 
 var b = document.getElementById("annun");
 

@@ -38,7 +38,6 @@
   align-items: center;
   flex-direction: column;
   width: 25%;
-  padding-bottom: 100px;
 }
 
 #c_material{
@@ -61,6 +60,7 @@
 ul, #my_treeview {
   list-style-type: none;
   padding-left: 25px;
+  list-style-position: inside;
 }
 
 /* Remove margins and padding from the parent ul */
@@ -71,6 +71,7 @@ ul, #my_treeview {
 
 /* Style the caret/arrow */
 .caret {
+  font-size: 0.92em;
   cursor: pointer;
   user-select: none; /* Prevent text selection */
 }
@@ -98,18 +99,14 @@ ul, #my_treeview {
   display: block;
 }
 
-/* tr:nth-child(even) {background-color: #f2f2f2;}
-
-th{
-  height: 35px;
-  text-align: center;
+.file {
+  font-size: 0.85em;
+  list-style-type: circle;
+  width: calc(20vw - 110px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
-.week_title{
-  font-size: 1.2em;
-  font-weight: bold;
-} */
-
 
 #cpanel{
   width: 50%;
@@ -117,7 +114,7 @@ th{
 
 #inst_container, #course_container, #reference_container{
   border: 1px solid black;
-  padding: 0 10px;
+  padding: 10px 20px;
   border-radius: 15px;
   margin-bottom: 30px;
   box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.63);
@@ -173,6 +170,7 @@ i{
 
 #reference_data > ul{
   list-style-type: circle;
+  list-style-position: outside;
 }
 
 #reference_container li, #reference_container a{
@@ -238,14 +236,14 @@ hr{
   width: 90%;
 }
 .ann_elem_body{
-  margin: 0 10px 0 15px;
+  margin: 0 12px 0 25px;
   font-size: 0.8em;
   margin-bottom: 8px;
 }
 
 
 
-@media only screen and (max-width: 940px) {
+@media only screen and (max-width: 1000px) {
   #container{
     flex-direction: row;
   }
@@ -259,7 +257,7 @@ hr{
     padding: 0 10vw;
   }
   #material_table{
-    width: 80vw;
+    width: 60vw;
     margin-bottom: 30px;
   }
 
@@ -296,5 +294,9 @@ hr{
   #annun{
     width: 80vw;
     margin-bottom: 30px;
+  }
+
+  .file {
+    width: 100%;
   }
 }
