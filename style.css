@@ -1,6 +1,7 @@
 *{
   margin: 0;
   font-family: 'Noto Sans', sans-serif;
+  font-weight: bold;
 }
 
 
@@ -48,13 +49,56 @@
 
 #material_table{
   margin-top: 15px;
+  padding: 20px;
   border: 1px solid black;
   border-radius: 10px;
-  width: 20vw;
+  width: calc(20vw - 40px);
   box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.63);
 }
 
-tr:nth-child(even) {background-color: #f2f2f2;}
+
+/* Remove default bullets */
+ul, #my_treeview {
+  list-style-type: none;
+  padding-left: 25px;
+}
+
+/* Remove margins and padding from the parent ul */
+#my_treeview {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the caret/arrow */
+.caret {
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+}
+
+/* Create the caret/arrow with a unicode, and style it */
+.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::before {
+  transform: rotate(90deg);
+}
+
+/* Hide the nested list */
+.nested {
+  display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+  display: block;
+}
+
+/* tr:nth-child(even) {background-color: #f2f2f2;}
 
 th{
   height: 35px;
@@ -64,7 +108,8 @@ th{
 .week_title{
   font-size: 1.2em;
   font-weight: bold;
-}
+} */
+
 
 #cpanel{
   width: 50%;
@@ -119,23 +164,27 @@ i{
 }
 
 #course_data {
-  margin: 25px;
+  margin: 10px 25px 25px 25px;
 }
 
 #course_data  li{
-  font-size: 1.2em;
+  font-size: 1.01em;
+}
+
+#reference_data > ul{
+  list-style-type: circle;
 }
 
 #reference_container li, #reference_container a{
-  font-size: 1.2em;
+  font-size: 1.01em;
 }
 
-#reference_container {
+/* #reference_container {
   padding: 0 25px 25px 25px;
-}
+} */
 
 #reference_data{
-  margin-top: 25px;
+  margin: 10px 25px 25px 25px;
 }
 
 #timing{
@@ -189,8 +238,8 @@ hr{
   width: 90%;
 }
 .ann_elem_body{
-  margin-left: 15px;
-  font-size: 1em;
+  margin: 0 10px 0 15px;
+  font-size: 0.8em;
   margin-bottom: 8px;
 }
 
